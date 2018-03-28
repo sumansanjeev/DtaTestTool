@@ -1,7 +1,7 @@
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-import com.datatorrent.apoxi.dta.DtaFileManager;
+import com.datatorrent.apoxi.dta.DtaPackage;
 
 public class DtaTestTool {
 
@@ -11,12 +11,12 @@ public class DtaTestTool {
       return;
     }
 
-    DtaFileManager dtaFileManager = new DtaFileManager(args[0]);
+    DtaPackage dtaPackage = new DtaPackage(args[0]);
     //System.out.println(dtaFileManager.toString());
 
     ObjectMapper objectMapper = new ObjectMapper();
     try {
-      System.out.println(objectMapper.writeValueAsString(dtaFileManager));
+      System.out.println(objectMapper.writeValueAsString(dtaPackage));
     } catch (JsonProcessingException e) {
       e.printStackTrace();
     }
